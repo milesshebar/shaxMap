@@ -17,9 +17,18 @@
 #include "NameEntry.h"
 #include "wordStem/english_stem.h"
 
-using namespace std;
+// Stuff for AJAX
+#include "cgicc/Cgicc.h"
+#include "cgicc/HTTPHTMLHeader.h"
+#include "cgicc/HTMLClasses.h"
 
-const string shaxFile = "Shakespeare.txt";
+#define XML_USE_STL
+
+using namespace std;
+using namespace cgicc; // Needed for AJAX functions.
+
+const string path = "/home/class/SoftDev/Shakespeare/";
+const string shaxFile = path+"Shakespeare.txt";
 NameMap shaxMap(shaxFile); //parse Shakespeare file into map structure
 
 
@@ -27,32 +36,30 @@ void printLines(vector<string> v, vector<int> x); //function to print lines to s
 
 stemming::english_stem<char, std::char_traits<char> > StemEnglish; //stem stuff
 
+// Object used for receiving AJAX call (and getting parameters)
+
+
+
 int main() {
-	char yesno;
-	cout << "\033[1;31mThis program finds all occurrences of a given word in the Shakespearean canon.\033[0m\n";
-    
-    do {
-    	string keyWord = "";
-    	cout << "Enter a word to search for: ";
-    	cin >> keyWord;
-    	cout << endl;
-    	cout << "Searching for all instances of " << "\e[1m" + keyWord + "\e[0m" << " in Shakespeare..." << endl << endl;
+	
+    	Cgicc cgi;    // Ajax object
+    	form_iterator itword = cgi.getElement("word");
+    	string keyWord = **itword;
     	transform(keyWord.begin(), keyWord.end(), keyWord.begin(), ::toupper);
 		StemEnglish(keyWord);
     	vector <int> current = shaxMap.indexSearch(keyWord); //constructs vector of line numbers with words matching result
 		printLines(shaxMap.lines, current); //print lines to screen
-		cout << "\033[1mWould you like to run this program again with a different word? (y/n) \033[0m\n";
-		cin >> yesno;
-    }
-        
-    while(yesno == 'y');
     
+  
 	return 0;
 }
 
 void printLines(vector<string> v, vector<int> x) {
+	
+	cout << "Content-Type: text/plain\n\n";
+	
 	for (int i = 0; i < x.size(); i++) {
-		cout << v[x[i]] << endl;
+		cout << v[x[i]] << "<br>" << endl;
 	
 	}
 

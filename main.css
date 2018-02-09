@@ -1,0 +1,31 @@
+nav {
+font-family: 'Space Mono', monospace;
+color: #98191b;
+
+padding-left: 30px;
+padding-right: 30px;
+
+
+}
+
+h3 {
+
+font-family: 'Space Mono', monospace;
+
+
+}
+
+#searchresults {
+
+font-family: 'Inconsolata'. monospace;
+
+
+}
+
+.jumbotron {
+
+padding-left: 30px;
+padding-right: 30px;
+font-family: 'Inconsolata'. monospace;
+
+}
