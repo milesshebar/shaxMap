@@ -3,8 +3,8 @@
  * Kenyon College, Spring 2018 - Proj. 1 Part 1
  *
  * shakespeare_cpp  -  This console program builds an inverted index of
- * Shakespeare's work and stores it in a searchable map data structure.
- *  
+ * Shakespeare's work and stores it in a searchable map data structure,
+ * passing it to a web frontend via Ajax calls.
  *
  ***************************************************************************/
 #include <stdlib.h>
@@ -27,8 +27,7 @@
 using namespace std;
 using namespace cgicc; // Needed for AJAX functions.
 
-const string path = "/home/class/SoftDev/Shakespeare/";
-const string shaxFile = path+"Shakespeare.txt";
+const string shaxFile = "Shakespeare.txt";
 NameMap shaxMap(shaxFile); //parse Shakespeare file into map structure
 
 
@@ -58,8 +57,9 @@ void printLines(vector<string> v, vector<int> x) {
 	
 	cout << "Content-Type: text/plain\n\n";
 	
-	for (int i = 0; i < x.size(); i++) {
-		cout << v[x[i]] << "<br>" << endl;
+	for (int i = 0; i < x.size(); i++) {	
+		
+		cout << v[x[i]] << "@" << x[i] << "@";
 	
 	}
 

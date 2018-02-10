@@ -29,3 +29,31 @@ padding-right: 30px;
 font-family: 'Inconsolata'. monospace;
 
 }
+
+
+
+.alignleft {
+    float: left;
+    text-align:left;
+    width:40%;
+    font-weight: bold;
+}
+.alignright {
+    float: right;
+    text-align:right;
+    width:60%;
+}
+
+@media only screen and (max-width: 675px)  {
+.alignleft {
+    text-align:center;
+    width:100%;
+    
+}
+.alignright {
+    text-align:center;
+    width:100%;
+}
+
+
+}

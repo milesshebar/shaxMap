@@ -37,6 +37,7 @@
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	    <form class="navbar-form navbar-right">
 	    <div class="form-group">
+	    <input type="submit" style="display: none;">
 	      <input type="text" id="search" class="form-control" placeholder="Search">
 	      <button type="button" id="search-btn" class="btn btn-default">Search Word</button>
 	    </div>
@@ -51,14 +52,16 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-	<h3 style="font-family: 'Space Mono', monospace;" id="resultstext">Results</h3>
+      <h4 style="font-family: 'Space Mono', monospace; text-align: center;" id="welcometext">Search for all occurrences of a word in the Shakespearean canon.</h4>
+	<h3 style="font-family: 'Space Mono', monospace;" id="resultstext">Results<br></h3>
 	<div id="searchresults" style="font-family: 'Inconsolata', monospace; text-align: center;""></div>
         <div id="loading"  style="display:none;">
-	  <img src="gears.gif"/>
+	  <h4 style="font-family: 'Space Mono', monospace; text-align: center;">Loading...</h4>
 	</div>
       </div>
     </div>
       <button style="font-family: 'Space Mono', monospace;" type="button" id="clear" class="btn btn-default center-block">Clear</button>
+    <p></p>
     <p style="font-family: 'Inconsolata', monospace; font-size: 0.75em; text-align: center;">Created by Miles Shebar for SCMP 368: Software Development<br>Spring 2018</p>
     </div> <!-- /container -->
 
