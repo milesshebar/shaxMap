@@ -17,7 +17,7 @@ all: main PutCGI PutHTML
 
 NameEntry.o: NameEntry.cpp NameEntry.h
 	$(CC) $(CFLAGS) NameEntry.cpp -c
-
+#you're doing a great job
 NameMap.o: NameMap.cpp NameMap.h NameEntry.h
 	$(CC) $(CFLAGS) NameMap.cpp -c
 
