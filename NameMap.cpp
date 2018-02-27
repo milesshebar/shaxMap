@@ -21,7 +21,7 @@ NameMap::NameMap(string filename) {
     
     
     while(!infile.fail()) {
-    	
+      //reads the text file    	
     	getline(infile, line); //get next line
     	lines.push_back(line); // push entire line into lines vector for later use
     	istringstream lineStream(line); //make sstream of entire line
