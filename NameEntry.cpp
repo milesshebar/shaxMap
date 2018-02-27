@@ -10,6 +10,7 @@
  * ***************************************************************************/
 #include "NameEntry.h"
 
+//Emma added a comment here
 NameEntry::NameEntry() {
     word = "";
     line = "";
