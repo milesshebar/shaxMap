@@ -12,6 +12,7 @@
 #include "NameMap.h"
 #include "wordStem/english_stem.h"
 
+//Emma added another comment here
 NameMap::NameMap(string filename) {
 	stemming::english_stem<char, std::char_traits<char> > StemEnglish;
     NameEntry nameData;
