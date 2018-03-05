@@ -3,4 +3,4 @@ C++ program that builds an inverted map index of every word stem used in Shakesp
 A fork of https://github.com/jimskon/NamesDemo
 
 
-# Project made by Miles Shebar for SCMP 368: Software Development
+### Project made by Miles Shebar for SCMP 368: Software Development
